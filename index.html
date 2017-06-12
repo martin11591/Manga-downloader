@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Get images from web pages</title>
+    </head>
+    <body>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="js/ajax.js"></script>
+        <script type="text/javascript">
+            window.onload = function() {
+                if (!window.jQuery) {
+                    tmp=document.createElement("script");
+                    tmp.setAttribute("type","text/javascript");
+                    tmp.setAttribute("src","js/jquery-3.2.1.min.js");
+                    document.body.appendChild(tmp);
+                }
+                req=request("test","http://localhost/getHTML/ajax.php?url="+encodeURIComponent("http://www.mangatown.com/manga/trinity_seven/",function(){alert("Success!\n\n"+req)},function(){alert("Fail!")},3));
+            }
+        </script>
+    </body>
+</html>
