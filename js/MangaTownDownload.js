@@ -212,7 +212,9 @@ function MangaTownDownload(response, doc, mangaObj) {
     pages = $("option[value]", pages);
     mangaObj.chapters[mangaObj.gI].pages = [];
     for (i = 0; i < pages.length; i++) {
-      mangaObj.chapters[mangaObj.gI].pages.push({url: pages[i].value});
+      iUrl = pages[i].value;
+      if (iUrl.indexOf("www") != -1) iUrl = iUrl.substr(iUrl.indexOf("www"));
+      mangaObj.chapters[mangaObj.gI].pages.push({url: iUrl});
     }
     imgs = $("img", doc);
     try {
@@ -241,7 +243,7 @@ function MangaTownDownload(response, doc, mangaObj) {
         mangaObj.chapters[mangaObj.gI].zip.file("Ch-" + mangaObj.chapters[mangaObj.gI].numStr + "-Pg-02.jpg", response.substr(response.indexOf(",") + 1), {base64: true});
       }, false, "POST");
     } catch (err) {
-      console.log("No more pages!");
+      console.log("No more pages!\n\n" + err);
       mangaObj.gI += mangaObj.gStep;
       if (mangaObj.gI > mangaObj.gStop || (mangaObj.desc && (mangaObj.gI < mangaObj.gStart))) {
         console.log("All chapters downloaded!");
@@ -274,7 +276,7 @@ function MangaTownDownload(response, doc, mangaObj) {
         }, false, "POST");
         gJ++;
       } catch (err) {
-        console.log("No more pages!");
+        console.log("No more pages!\n\n" + err);
         mangaObj.gI++;
         if (mangaObj.gI > mangaObj.gStop || (mangaObj.desc && (mangaObj.gI < mangaObj.gStart))) {
           console.log("All chapters downloaded!");
@@ -293,7 +295,7 @@ function MangaTownDownload(response, doc, mangaObj) {
         }, false, "POST");
         gJ++;
       } catch (err) {
-        console.log("No more pages!");
+        console.log("No more pages!\n\n" + err);
         mangaObj.gI += mangaObj.gStep;
         if (mangaObj.gI > mangaObj.gStop || (mangaObj.desc && (mangaObj.gI < mangaObj.gStart))) {
           console.log("All chapters downloaded!");

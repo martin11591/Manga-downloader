@@ -9,25 +9,25 @@ window.onload = function () {
   if (!window.jQuery) {
     tmp = document.createElement("script");
     tmp.setAttribute("type", "text/javascript");
-    tmp.setAttribute("src", "/MangaDownloader/js/jquery-3.2.1.min.js");
+    tmp.setAttribute("src", "js/jquery-3.2.1.min.js");
     document.body.appendChild(tmp);
   }
   if (typeof ($.fn.modal) === 'undefined') {
     tmp = document.createElement("script");
     tmp.setAttribute("type", "text/javascript");
-    tmp.setAttribute("src", "/MangaDownloader/js/bootstrap-3.3.7.min.js");
+    tmp.setAttribute("src", "js/bootstrap-3.3.7.min.js");
     document.body.appendChild(tmp);
   }
   if (!window.JSZip) {
     tmp = document.createElement("script");
     tmp.setAttribute("type", "text/javascript");
-    tmp.setAttribute("src", "/MangaDownloader/js/jszip-3.1.3.3.min.js");
+    tmp.setAttribute("src", "js/jszip-3.1.3.3.min.js");
     document.body.appendChild(tmp);
   }
   if (!window.saveAs) {
     tmp = document.createElement("script");
     tmp.setAttribute("type", "text/javascript");
-    tmp.setAttribute("src", "/MangaDownloader/js/FileSaver.min.js");
+    tmp.setAttribute("src", "js/FileSaver.min.js");
     document.body.appendChild(tmp);
   }
   $(document).ready(function () {
@@ -38,7 +38,7 @@ window.onload = function () {
   });
   //req=request("test","ajax.php?url="+encodeURIComponent("http://www.mangatown.com/manga/fairy_tail/",function(){alert("Success!\n\n"+req)},function(){alert("Fail!")},3));
   this.manga = {};
-  //this.manga.startFrom = 110;
+  this.manga.startFrom = 110;
   simpleRequest("http://www.mangatown.com/manga/kissxsis/",gather);
 }
 
@@ -60,7 +60,7 @@ function gather(response) {
       } catch(err) {
         tmp = document.createElement("script");
         tmp.setAttribute("type", "text/javascript");
-        tmp.setAttribute("src", "/MangaDownloader/js/MangaTownDownload.js");
+        tmp.setAttribute("src", "js/MangaTownDownload.js");
         document.body.appendChild(tmp);
       }
       break;

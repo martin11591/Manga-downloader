@@ -220,7 +220,13 @@ function simpleRequest(url, callback, async, method, autofail) {
   req = new XMLHttpRequest();
   req.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
+      if (this.responseText == "") {
+        console.log("Request error! Retry...");
+        simpleRequest(url, callback, async, method);
+        return false;
+      }
       callback(this.responseText);
+      return true;
     }
   };
   req.onerror = function () {
