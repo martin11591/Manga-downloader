@@ -101,8 +101,8 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script type="text/javascript" src="/MangaDownloader/js/functions.js"></script>
-    <script type="text/javascript" src="/MangaDownloader/js/info.js"></script>
-    <script type="text/javascript" src="/MangaDownloader/js/main.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript" src="js/info.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>
